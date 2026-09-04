@@ -12,6 +12,11 @@ This repository is a shared workspace for ChatGPT, Codex, and Claude Code.
 6. When requirements are ambiguous, state the assumption or ask before making a destructive change.
 7. Keep commits focused and use clear commit messages.
 
+## Tool-specific instruction files
+
+- Codex: after reading this file, also read `CODEX.md` before making substantive repository changes.
+- Claude Code: after reading this file, also read `CLAUDE.md` before making substantive repository changes.
+
 ## Public-repository privacy guard
 
 This repository is PUBLIC.
