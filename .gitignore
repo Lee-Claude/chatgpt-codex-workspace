@@ -1,0 +1,29 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+
+# Sensitive local-only folders
+private/
+confidential/
+customer-data/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Common build/cache artifacts
+__pycache__/
+*.py[cod]
+node_modules/
+dist/
+build/
+.cache/
