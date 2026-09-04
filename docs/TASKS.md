@@ -17,7 +17,8 @@ This file is the lightweight shared task board for ChatGPT, Codex, and Claude Co
 | DONE | Add Codex-specific instructions | ChatGPT | Maintain as needed |
 | DONE | Add Claude Code-specific instructions | ChatGPT | Maintain as needed |
 | DONE | Add durable project memory, decisions, and handoff docs | ChatGPT | Maintain as needed |
-| IN PROGRESS | Finish shared workspace bootstrap | ChatGPT | Complete navigation, privacy, workflow, and templates |
+| DONE | Finish shared workspace bootstrap | ChatGPT | Bootstrap complete |
+| TODO | Connect repository to local Codex / Claude Code working environment | User + local agent | Clone/open repository locally and verify both tools read the root instructions |
 
 ## Usage rules
 
