@@ -17,6 +17,18 @@ This repository is a shared workspace for ChatGPT, Codex, and Claude Code.
 - Codex: after reading this file, also read `CODEX.md` before making substantive repository changes.
 - Claude Code: after reading this file, also read `CLAUDE.md` before making substantive repository changes.
 
+## Shared task context
+
+Before continuing a substantial or multi-step task, read:
+
+- `docs/TASKS.md` for current task state
+- `docs/HANDOFF.md` for cross-assistant continuation context
+- `docs/DECISIONS.md` for durable decisions that affect the work
+- `docs/PROJECT_MEMORY.md` for non-sensitive durable background when relevant
+- `docs/WORKFLOW.md` for the standard collaboration lifecycle
+
+For project-specific work, also read the relevant directory under `projects/` and any more specific `AGENTS.md` in scope.
+
 ## Public-repository privacy guard
 
 This repository is PUBLIC.
@@ -30,13 +42,17 @@ Never commit any of the following unless the user has explicitly confirmed that 
 
 If potentially sensitive material is detected, stop before committing it and warn the user. Recommend one of these options: redact/anonymize the data, exclude the file from Git, or move the work to a private repository.
 
+Read `docs/PRIVACY.md` for the detailed public-repository safety procedure. Remember that deleting a sensitive file in a later commit does not automatically remove it from Git history.
+
 ## Coordination between assistants
 
 - Treat repository files as the durable source of truth for project-specific instructions.
 - Do not assume another assistant has seen prior chat history unless that information has been written into the repository.
 - Record durable project decisions in an appropriate repository document rather than relying only on conversation history.
+- Update `docs/HANDOFF.md` when another assistant may need to continue unfinished work.
+- Update `docs/TASKS.md` when a meaningful task changes state.
 - Avoid duplicating the same rule across many files. Keep shared rules here and tool-specific rules in their dedicated files when needed.
 
 ## Scope
 
-More specific AGENTS.md files placed in subdirectories may add or override instructions for files inside those directories.
+More specific `AGENTS.md` files placed in subdirectories may add or override instructions for files inside those directories, except that they must not weaken higher-priority safety or privacy protections.
