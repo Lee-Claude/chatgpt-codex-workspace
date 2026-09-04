@@ -12,6 +12,7 @@ The repository is intentionally lightweight: shared rules live at the root, dura
 4. Check [`docs/TASKS.md`](docs/TASKS.md) for current work.
 5. Check [`docs/HANDOFF.md`](docs/HANDOFF.md) before continuing work started by another assistant.
 6. Read [`docs/PRIVACY.md`](docs/PRIVACY.md) before adding customer, company, credential, or potentially sensitive material.
+7. Use [`docs/LOCAL_SETUP.md`](docs/LOCAL_SETUP.md) to connect the repository to the local Codex / Claude Code environment.
 
 ## Repository structure
 
@@ -31,7 +32,8 @@ The repository is intentionally lightweight: shared rules live at the root, dura
 │   ├── HANDOFF.md             # Current cross-assistant handoff
 │   ├── HANDOFF_TEMPLATE.md    # Standard handoff format
 │   ├── WORKFLOW.md            # Shared operating workflow
-│   └── PRIVACY.md             # Public-repository privacy rules
+│   ├── PRIVACY.md             # Public-repository privacy rules
+│   └── LOCAL_SETUP.md         # Local Codex / Claude Code connection guide
 └── projects/
     └── README.md              # Convention for project-specific workspaces
 ```
@@ -54,4 +56,4 @@ For substantial work, create a directory under `projects/`. Add a more specific 
 
 ## Current state
 
-The shared-workspace bootstrap is complete. The next practical step is to clone or connect this repository inside the local Codex / Claude Code working environment and begin putting real, non-sensitive projects under `projects/`.
+The GitHub-side shared-workspace bootstrap is complete and verified. The remaining practical step is local-machine setup: clone or open this repository inside Codex / Claude Code and run the read-only checks in [`docs/LOCAL_SETUP.md`](docs/LOCAL_SETUP.md).
