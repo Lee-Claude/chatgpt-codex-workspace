@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>IFA 2026 第二天 · 现场执行版</title><style>
+:root{--bg:#f4f6f8;--card:#fff;--ink:#17202a;--muted:#667085;--line:#e5e7eb;--a:#b42318;--b:#b54708;--c:#475467;--accent:#0b63ce;--ok:#067647}
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+a{color:var(--accent);text-decoration:none}.app{max-width:980px;margin:auto;padding:14px}.hero{background:#111827;color:#fff;border-radius:18px;padding:20px;margin-bottom:12px}.hero h1{font-size:25px;margin:0 0 8px}.hero p{margin:5px 0;color:#d1d5db;line-height:1.5}.hero .buttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.hero a,.topbtn{background:#fff;color:#111827;padding:9px 12px;border-radius:9px;font-weight:700;font-size:13px}.sticky{position:sticky;top:0;z-index:30;background:rgba(244,246,248,.96);backdrop-filter:blur(8px);padding:8px 0}.progressbox{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px}.bar{height:9px;background:#e5e7eb;border-radius:99px;flex:1;overflow:hidden}.bar>i{display:block;height:100%;width:0;background:var(--ok);transition:.2s}.pct{font-weight:800;min-width:55px;text-align:right}.filters{display:flex;gap:7px;overflow:auto;padding:8px 0}.filters button{white-space:nowrap;border:1px solid var(--line);background:white;border-radius:999px;padding:8px 11px;font-weight:700;color:#344054}.filters button.active{background:#111827;color:white}.search{width:100%;border:1px solid var(--line);background:#fff;border-radius:11px;padding:11px;font-size:16px}.day{margin:18px 0 28px}.dayhead{background:#eaf2ff;border:1px solid #cfe0ff;border-radius:14px;padding:14px}.dayhead h2{margin:0 0 5px;font-size:20px}.dayhead p{margin:4px 0;line-height:1.5}.block{margin:14px 0}.blocktitle{display:flex;gap:10px;align-items:baseline;margin:12px 3px 8px}.time{font-weight:900;color:#344054;min-width:105px}.hall{font-weight:900}.stop{background:var(--card);border:1px solid var(--line);border-left:5px solid #98a2b3;border-radius:14px;margin:8px 0;padding:12px;box-shadow:0 1px 2px rgba(16,24,40,.04)}.stop.priority-A{border-left-color:var(--a)}.stop.priority-B{border-left-color:var(--b)}.stop.done{opacity:.56;background:#f9fafb}.stop-top{display:flex;align-items:center;gap:9px}.seq{font-size:12px;font-weight:900;background:#f2f4f7;padding:5px 7px;border-radius:7px}.headings{flex:1;min-width:0}.brand{font-size:17px;font-weight:900}.meta{color:var(--muted);font-size:13px;margin-top:3px}.prio{font-weight:900;font-size:12px;border-radius:999px;padding:5px 8px;background:#f2f4f7}.priority-A .prio{color:var(--a);background:#fee4e2}.priority-B .prio{color:var(--b);background:#fef0c7}.goal,.why{margin:9px 0 0 38px;line-height:1.45;font-size:14px}.why{color:#475467}details{margin:10px 0 0 38px;border-top:1px dashed var(--line);padding-top:9px}summary{cursor:pointer;font-weight:800;color:#344054}.detailgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}.detailgrid>div,.script{background:#f9fafb;border-radius:10px;padding:10px}.detailgrid h4,.script h4{margin:0 0 6px}.detailgrid p,.detailgrid li,.script p{font-size:13px;line-height:1.55;margin-top:4px}.detailgrid ol{margin:0;padding-left:20px}.noteslabel{display:block;font-weight:800;margin-top:10px}.notes{display:block;width:100%;min-height:70px;margin-top:6px;border:1px solid var(--line);border-radius:9px;padding:9px;font-size:14px}.actions{margin-top:8px}.smallbtn{display:inline-block;background:#eef4ff;padding:7px 10px;border-radius:8px;font-size:12px;font-weight:800}.checkwrap input{display:none}.checkwrap span{display:block;width:24px;height:24px;border:2px solid #98a2b3;border-radius:7px;background:#fff;position:relative}.checkwrap input:checked+span{background:var(--ok);border-color:var(--ok)}.checkwrap input:checked+span:after{content:'✓';position:absolute;color:#fff;font-weight:900;left:5px;top:0}.tip,.introbox{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}.tip h3,.introbox h3{margin:0 0 8px}.legend{display:flex;gap:8px;flex-wrap:wrap}.legend span{font-size:12px;padding:5px 8px;border-radius:8px;background:#f2f4f7}.optional{background:#fffaeb;border-color:#fedf89}.hidden{display:none!important}.footer{font-size:12px;color:#667085;padding:20px 5px 40px;line-height:1.5}
+@media(max-width:700px){.app{padding:9px}.hero{border-radius:14px;padding:16px}.hero h1{font-size:21px}.detailgrid{grid-template-columns:1fr}.goal,.why,details{margin-left:33px}.time{min-width:0}.blocktitle{display:block}.blocktitle .time{margin-bottom:3px}.brand{font-size:16px}.meta{font-size:12px}}
+@media print{.sticky,.filters,.search,.hero .buttons,.notes,.actions{display:none!important}.app{max-width:none}.stop{break-inside:avoid;box-shadow:none}.hero{color:#000;background:#fff;border:1px solid #ddd}.hero p{color:#444}details{display:block}details>*{display:block}summary{display:none}.day{page-break-before:always}.day:first-of-type{page-break-before:auto}}
+
+/* 第二天独立版增强：仍沿用第一天视觉体系 */
+.hero .safe-note{margin-top:10px;padding:9px 11px;border-radius:10px;background:#1f2937;color:#d1fae5;font-size:13px}
+.filters button[data-filter="scooter"]{border-color:#cfe0ff}
+.repairbox{background:#f7fbff;border:1px solid #dbeafe;border-radius:10px;padding:10px;margin-top:10px}
+.repairbox h4{margin:0 0 6px;color:#1849a9}
+.repairbox p,.repairbox li{font-size:13px;line-height:1.55}
+.repairbox ul{margin:5px 0 0;padding-left:20px}
+.savecollapse{margin-left:7px;border:0;background:#eef4ff;color:#1849a9;padding:7px 10px;border-radius:8px;font-weight:800;font-size:12px;cursor:pointer}
+.backupbar{position:sticky;bottom:0;z-index:25;background:rgba(244,246,248,.97);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:8px 0;display:flex;gap:8px}
+.backupbar button{flex:1;border:1px solid var(--line);border-radius:10px;padding:10px;background:#fff;font-weight:800;color:#344054}
+.backupbar .export{background:#ecfdf3;border-color:#abefc6;color:#067647}
+.scooter-note{background:#f0f9ff;border:1px solid #b9e6fe;border-radius:12px;padding:11px;margin:9px 0;color:#344054;line-height:1.5;font-size:13px}
+@media(max-width:700px){.savecollapse{display:block;margin:8px 0 0 0;width:100%}.backupbar{padding-bottom:calc(8px + env(safe-area-inset-bottom))}}
+
+/* ===== 手机现场使用增强：保持第一天原版视觉结构 ===== */
+html{scroll-behavior:smooth}
+body{padding-bottom:calc(74px + env(safe-area-inset-bottom))}
+.app{max-width:760px;margin:0 auto}
+.mobile-actionbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));
+  background:rgba(248,250,252,.97);backdrop-filter:blur(12px);
+  border-top:1px solid #dfe4ea
+}
+.mobile-actionbar button{
+  min-height:44px;border:1px solid #d0d5dd;border-radius:11px;
+  background:#fff;color:#344054;font-weight:800;font-size:13px
+}
+.mobile-actionbar button.primary{background:#155eef;color:#fff;border-color:#155eef}
+.mobile-actionbar button.safe{background:#ecfdf3;color:#067647;border-color:#abefc6}
+.quick-status{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:8px;margin-top:8px;padding:8px 10px;border-radius:10px;
+  background:#f8fafc;border:1px solid #e4e7ec;font-size:12px;color:#667085
+}
+.quick-status b{color:#344054}
+.stop.flash{outline:3px solid #84adff;outline-offset:2px}
+@media(max-width:700px){
+  .hero{padding-top:16px}
+  .hero h1{font-size:22px}
+  .sticky{top:0}
+  .filters{overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+  .filters button{flex:0 0 auto;min-height:42px}
+  .search{font-size:16px!important;min-height:46px}
+  .stop{border-radius:14px}
+  .top,.head{align-items:flex-start}
+  details summary{font-size:15px;line-height:1.35}
+  .notes{font-size:16px!important;min-height:120px!important}
+  .savecollapse{min-height:44px}
+}
+
+</style></head><body><main class="app"><section class="hero">
+<h1>IFA 2026 · 第二天现场执行版</h1>
+<p>核心原则：<b>完全沿用第一天的卡片、进度、筛选、展商详情、现场记录和折叠逻辑</b>。本文件只记录第二天，不碰第一天旧数据。</p>
+<p>公司定位：<b>Homburg International DC GmbH · 德国本地维修 / RMA / 技术售后服务</b></p>
+<div class="safe-note">数据隔离：第二天使用独立命名空间 IFA2026_DAY2_FULL_V1。后天恢复第一天后，可导出两份 JSON 再合并。</div>
+</section>
+<div class="sticky">
+<div class="progressbox"><b>完成进度</b><div class="bar"><i id="bar"></i></div><div class="pct" id="pct">0%</div></div>
+<div class="filters">
+<button class="active" data-filter="all">全部</button>
+<button data-filter="A">只看 A级</button>
+<button data-filter="core">核心路线</button>
+<button data-filter="scooter">电动滑板车</button>
+</div>
+<input class="search" id="search" placeholder="搜索品牌 / 展位 / 主题，例如 H12-119、Hypershell、Pongbot、NAVEE、RMA"/>
+</div>
+
+<section class="tip"><h3>A / B / C 分级原则（沿用第一天）</h3>
+<div class="legend"><span>🔴 A级：必须谈 · 15–25分钟</span><span>🟠 B级：重点判断 · 8–12分钟</span><span>⚪ C级：顺路快扫 · 3–5分钟</span></div>
+<p><b>A级：</b>优先拿到德国/欧洲售后负责人、维修/RMA流程、备件与维修培训条件，并约定展会后的下一步。</p>
+<p><b>B级：</b>8–12分钟快速判断：德国是否已有维修伙伴、是否存在区域/峰值服务缺口、是否开放第三方授权维修。</p>
+<p><b>C级：</b>只在同馆顺路时快速确认售后现状、拿联系人和资料；时间不足首先删 C 级。</p>
+</section>
+
+<section class="introbox" id="intro"><h3>30 秒自我介绍 · 直接照着说</h3>
+<p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p>
+<p><b>德语：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p>
+<p><b>英语：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p>
+<p><b>核心筛选问题：</b>How do you currently handle defective units in Germany?</p>
+</section>
+<section class="day" data-daysec="d2"><div class="dayhead"><h2>9月5日 周六 · 外骨骼 + 网球机器人 + IFA Next + 电动滑板车备用</h2><p><b>入口：</b>建议从 Hall 12 / Hall 15 一侧开始</p><p><b>核心动线：</b>Hall 12 → Hall 15 → Hall 1.2 → Hall 2.2 → Hall 25 → Hall 26</p><p><b>执行原则：</b>A 级深谈；B 级快速判断；C 级顺路补漏。电动滑板车作为独立加程，优先 CityCube Hall B。</p></div><div class="block"><div class="blocktitle"><span class="time">09:30–10:30</span><span class="hall">Hall 12｜外骨骼核心</span></div><article class="stop priority-C" data-day="core" data-hall="Hall 12｜外骨骼核心" data-priority="C" data-search="ascentiz h12-109 外骨骼 德国市场导入：产品定位、ce/适用法规、试用样机、经销条件、售后与责任边界">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-core-01" type="checkbox"/><span></span></label>
+<div class="seq">01</div>
+<div class="headings"><div class="brand">Ascentiz</div><div class="meta"><b>H12-109</b> · 外骨骼 · 中国</div></div>
+<span class="prio">C级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：现有德国服务体系、常见故障、备件、维修培训、保修流程与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>唯一开源路线的外骨骼厂商，适合做二次开发/定制集成合作。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid">
+<div><h4>产品 / 看点</h4><p>主打 AI 可穿戴外骨骼，现场可体验助力行走；同步首发开源移动平台 B-core Pi × BodyOS，面向开发者与第三方集成。</p></div>
+<div><h4>必问问题</h4><ol><li>针对现场产品：主打 AI 可穿戴外骨骼，现场可体验助力行走 —— 这项能力目前是否已量产、德国版何时可交付？</li><li>产品在欧盟按什么产品类别销售？CE 文件/测试报告能否给合作方审核？</li><li>德国目标用户是谁：户外、老人助行、工业还是康复？是否涉及医疗器械定位？</li><li>能否提供 Demo 样机、销售培训、维修工具和备件？</li><li>德国经销价、MOQ、独家/非独家条件和年度目标是什么？</li></ol></div>
+</div><div class="repairbox"><h4>维修合作切入</h4><ul><li>外骨骼属于高价值、售后链条较复杂的产品，本地维修可减少整机跨境退运。</li><li>重点确认德国是否已有维修中心；如已有，继续问是否需要区域覆盖、峰值 RMA、复杂故障或第三方授权维修补充。</li><li>合作落点：故障诊断、模块维修/更换、备件仓、保修案件、RMA 报告、维修培训与技术支持。</li></ul></div><div class="repairbox"><h4>RMA / 售后必问</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-core-01-note" placeholder="联系人 / 职务 / 报价 / MOQ / 下一步 / 截止日"></textarea></label>
+<div class="actions"><a class="smallbtn" href="https://ascentizexo.com" target="_blank">品牌官网 ↗</a><button class="savecollapse" data-target="d2-core-01" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-A" data-day="core" data-hall="Hall 12｜外骨骼核心" data-priority="A" data-search="hypershell（极壳） h12-119 外骨骼 德国市场导入：产品定位、ce/适用法规、试用样机、经销条件、售后与责任边界">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-core-02" type="checkbox"/><span></span></label>
+<div class="seq">02</div>
+<div class="headings"><div class="brand">Hypershell（极壳）</div><div class="meta"><b>H12-119</b> · 外骨骼 · 中国</div></div>
+<span class="prio">A级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：现有德国服务体系、常见故障、备件、维修培训、保修流程与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>消费级外骨骼全球销冠级玩家，产品成熟度最高，适合谈欧洲分销/代理。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid">
+<div><h4>产品 / 看点</h4><p>2026 新品 Halo 全腿外骨骼（髋+膝四电机），9月3日 15:00 展前发布；已量产 X 系列髋部外骨骼，销往70+国家，SGS 认证。优先级最高。</p></div>
+<div><h4>必问问题</h4><ol><li>针对现场产品：2026 新品 Halo 全腿外骨骼（髋+膝四电机），9月3日 15:00 展前发布 —— 这项能力目前是否已量产、德国版何时可交付？</li><li>产品在欧盟按什么产品类别销售？CE 文件/测试报告能否给合作方审核？</li><li>德国目标用户是谁：户外、老人助行、工业还是康复？是否涉及医疗器械定位？</li><li>能否提供 Demo 样机、销售培训、维修工具和备件？</li><li>德国经销价、MOQ、独家/非独家条件和年度目标是什么？</li></ol></div>
+</div><div class="repairbox"><h4>维修合作切入</h4><ul><li>外骨骼属于高价值、售后链条较复杂的产品，本地维修可减少整机跨境退运。</li><li>重点确认德国是否已有维修中心；如已有，继续问是否需要区域覆盖、峰值 RMA、复杂故障或第三方授权维修补充。</li><li>合作落点：故障诊断、模块维修/更换、备件仓、保修案件、RMA 报告、维修培训与技术支持。</li></ul></div><div class="repairbox"><h4>RMA / 售后必问</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-core-02-note" placeholder="联系人 / 职务 / 报价 / MOQ / 下一步 / 截止日"></textarea></label>
+<div class="actions"><a class="smallbtn" href="https://hypershell.com" target="_blank">品牌官网 ↗</a><button class="savecollapse" data-target="d2-core-02" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article></div><div class="block"><div class="blocktitle"><span class="time">10:30–11:35</span><span class="hall">Hall 15｜外骨骼 + 网球</span></div><article class="stop priority-C" data-day="core" data-hall="Hall 15｜外骨骼 + 网球" data-priority="C" data-search="dnsys h15-105 外骨骼 德国市场导入：产品定位、ce/适用法规、试用样机、经销条件、售后与责任边界">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-core-03" type="checkbox"/><span></span></label>
+<div class="seq">03</div>
+<div class="headings"><div class="brand">DNSYS</div><div class="meta"><b>H15-105</b> · 外骨骼 · 中国</div></div>
+<span class="prio">C级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：现有德国服务体系、常见故障、备件、维修培训、保修流程与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>性价比路线，可作为 Hypershell 的备选/补充货源。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid">
+<div><h4>产品 / 看点</h4><p>消费级助力外骨骼，主打轻便步行助力。外骨骼关键词在官方目录命中。</p></div>
+<div><h4>必问问题</h4><ol><li>针对现场产品：消费级助力外骨骼，主打轻便步行助力 —— 这项能力目前是否已量产、德国版何时可交付？</li><li>产品在欧盟按什么产品类别销售？CE 文件/测试报告能否给合作方审核？</li><li>德国目标用户是谁：户外、老人助行、工业还是康复？是否涉及医疗器械定位？</li><li>能否提供 Demo 样机、销售培训、维修工具和备件？</li><li>德国经销价、MOQ、独家/非独家条件和年度目标是什么？</li></ol></div>
+</div><div class="repairbox"><h4>维修合作切入</h4><ul><li>外骨骼属于高价值、售后链条较复杂的产品，本地维修可减少整机跨境退运。</li><li>重点确认德国是否已有维修中心；如已有，继续问是否需要区域覆盖、峰值 RMA、复杂故障或第三方授权维修补充。</li><li>合作落点：故障诊断、模块维修/更换、备件仓、保修案件、RMA 报告、维修培训与技术支持。</li></ul></div><div class="repairbox"><h4>RMA / 售后必问</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-core-03-note" placeholder="联系人 / 职务 / 报价 / MOQ / 下一步 / 截止日"></textarea></label>
+<div class="actions"><a class="smallbtn" href="https://dnsysofficial.com" target="_blank">品牌官网 ↗</a><button class="savecollapse" data-target="d2-core-03" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-C" data-day="core" data-hall="Hall 15｜外骨骼 + 网球" data-priority="C" data-search="tenniix（英汉思动力） h15-128 网球机器人 德国体育渠道：俱乐部/教练场景、经销价格、app 本地化、备件售后、demo 合作">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-core-04" type="checkbox"/><span></span></label>
+<div class="seq">04</div>
+<div class="headings"><div class="brand">Tenniix（英汉思动力）</div><div class="meta"><b>H15-128</b> · 网球机器人 · 中国</div></div>
+<span class="prio">C级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：现有德国服务体系、常见故障、备件、维修培训、保修流程与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>价格带最低（$699 起步），适合打大众市场。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid">
+<div><h4>产品 / 看点</h4><p>自称全球首款视觉 AI 网球机器人，双目视觉实时读球调速/旋/落点；模块化，Basic $699 / Pro $1,099；Pro 100+ 球仓、75mph、5000 RPM、4h 续航、语音控制。同时参加 9月3日 ShowStoppers。</p></div>
+<div><h4>必问问题</h4><ol><li>针对现场产品：自称全球首款视觉 AI 网球机器人，双目视觉实时读球调速/旋/落点 —— 这项能力目前是否已量产、德国版何时可交付？</li><li>德国市场是面向个人、俱乐部还是教练？现有欧洲渠道在哪里？</li><li>App 是否支持德语？固件 OTA、数据账户和售后由谁负责？</li><li>球轮/电池/发球机构等易损件是否可本地备货？</li><li>Dealer price、MOQ、Demo unit、俱乐部试用合作条件是什么？</li></ol></div>
+</div><div class="repairbox"><h4>维修合作切入</h4><ul><li>网球机器人属于高价值、售后链条较复杂的产品，本地维修可减少整机跨境退运。</li><li>重点确认德国是否已有维修中心；如已有，继续问是否需要区域覆盖、峰值 RMA、复杂故障或第三方授权维修补充。</li><li>合作落点：故障诊断、模块维修/更换、备件仓、保修案件、RMA 报告、维修培训与技术支持。</li></ul></div><div class="repairbox"><h4>RMA / 售后必问</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-core-04-note" placeholder="联系人 / 职务 / 报价 / MOQ / 下一步 / 截止日"></textarea></label>
+<div class="actions"><a class="smallbtn" href="https://tenniix.ai" target="_blank">品牌官网 ↗</a><button class="savecollapse" data-target="d2-core-04" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-A" data-day="core" data-hall="Hall 15｜外骨骼 + 网球" data-priority="A" data-search="pongbot（庞伯特 / 上海创屹） h15-131 网球机器人 德国体育渠道：俱乐部/教练场景、经销价格、app 本地化、备件售后、demo 合作">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-core-05" type="checkbox"/><span></span></label>
+<div class="seq">05</div>
+<div class="headings"><div class="brand">Pongbot（庞伯特 / 上海创屹）</div><div class="meta"><b>H15-131</b> · 网球机器人 · 中国</div></div>
+<span class="prio">A级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：现有德国服务体系、常见故障、备件、维修培训、保修流程与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>赛道融资与出货量第一梯队，最值得谈的一家。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid">
+<div><h4>产品 / 看点</h4><p>Pace S / Pace S Pro 网球机器人；Kickstarter 超额 26255%、募集 265 万美元，69 项专利；UWB 精准落点±10cm、100Hz 追踪、150 球仓、15–80mph、564+ 训练套路；同时参加 9月3日 ShowStoppers @ IFA（Hall 5.3），带来 7kg 多运动（网球/匹克球/板式网球）发球机器人。</p></div>
+<div><h4>必问问题</h4><ol><li>针对现场产品：Pace S / Pace S Pro 网球机器人 —— 这项能力目前是否已量产、德国版何时可交付？</li><li>德国市场是面向个人、俱乐部还是教练？现有欧洲渠道在哪里？</li><li>App 是否支持德语？固件 OTA、数据账户和售后由谁负责？</li><li>球轮/电池/发球机构等易损件是否可本地备货？</li><li>Dealer price、MOQ、Demo unit、俱乐部试用合作条件是什么？</li></ol></div>
+</div><div class="repairbox"><h4>维修合作切入</h4><ul><li>网球机器人属于高价值、售后链条较复杂的产品，本地维修可减少整机跨境退运。</li><li>重点确认德国是否已有维修中心；如已有，继续问是否需要区域覆盖、峰值 RMA、复杂故障或第三方授权维修补充。</li><li>合作落点：故障诊断、模块维修/更换、备件仓、保修案件、RMA 报告、维修培训与技术支持。</li></ul></div><div class="repairbox"><h4>RMA / 售后必问</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-core-05-note" placeholder="联系人 / 职务 / 报价 / MOQ / 下一步 / 截止日"></textarea></label>
+<div class="actions"><a class="smallbtn" href="https://www.pongbot.com" target="_blank">品牌官网 ↗</a><button class="savecollapse" data-target="d2-core-05" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article></div><div class="block"><div class="blocktitle"><span class="time">11:35–13:00</span><span class="hall">南馆｜Hall 1.2 → Hall 2.2</span></div><article class="stop priority-A" data-day="core" data-hall="南馆｜Hall 1.2 → Hall 2.2" data-priority="A" data-search="acemate（卧安机器人 / switchbot 联合展位） h1.2-146 网球机器人 德国体育渠道：俱乐部/教练场景、经销价格、app 本地化、备件售后、demo 合作">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-core-06" type="checkbox"/><span></span></label>
+<div class="seq">06</div>
+<div class="headings"><div class="brand">Acemate（卧安机器人 / SwitchBot 联合展位）</div><div class="meta"><b>H1.2-146</b> · 网球机器人 · 中国</div></div>
+<span class="prio">A级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：现有德国服务体系、常见故障、备件、维修培训、保修流程与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>唯一「能对打」的形态，产品差异化最强。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid">
+<div><h4>产品 / 看点</h4><p>Acemate S10：4K 双目视觉 + 全向麦克纳姆轮，可接球回球做真实对拉，0.15 秒响应，60mph 对拉速度，40+ 训练模板（NTRP 1.0–5.0），赛后出落点/速度/过网高度/命中率数据。美国 MSRP $2,499。</p></div>
+<div><h4>必问问题</h4><ol><li>针对现场产品：Acemate S10：4K 双目视觉 + 全向麦克纳姆轮，可接球回球做真实对拉，0.15 秒响应，60mph 对拉速度，40+ 训练模板（NTRP … —— 这项能力目前是否已量产、德国版何时可交付？</li><li>德国市场是面向个人、俱乐部还是教练？现有欧洲渠道在哪里？</li><li>App 是否支持德语？固件 OTA、数据账户和售后由谁负责？</li><li>球轮/电池/发球机构等易损件是否可本地备货？</li><li>Dealer price、MOQ、Demo unit、俱乐部试用合作条件是什么？</li></ol></div>
+</div><div class="repairbox"><h4>维修合作切入</h4><ul><li>网球机器人属于高价值、售后链条较复杂的产品，本地维修可减少整机跨境退运。</li><li>重点确认德国是否已有维修中心；如已有，继续问是否需要区域覆盖、峰值 RMA、复杂故障或第三方授权维修补充。</li><li>合作落点：故障诊断、模块维修/更换、备件仓、保修案件、RMA 报告、维修培训与技术支持。</li></ul></div><div class="repairbox"><h4>RMA / 售后必问</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-core-06-note" placeholder="联系人 / 职务 / 报价 / MOQ / 下一步 / 截止日"></textarea></label>
+<div class="actions"><a class="smallbtn" href="https://acemate.ai" target="_blank">品牌官网 ↗</a><button class="savecollapse" data-target="d2-core-06" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-C" data-day="core" data-hall="南馆｜Hall 1.2 → Hall 2.2" data-priority="C" data-search="ezviz（萤石） h1.2-175 割草机器人 德国渠道/售后合作：经销政策、rma 与备件、导航方案、安装调试与本地服务">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-core-07" type="checkbox"/><span></span></label>
+<div class="seq">07</div>
+<div class="headings"><div class="brand">EZVIZ（萤石）</div><div class="meta"><b>H1.2-175</b> · 割草机器人 · 荷兰</div></div>
+<span class="prio">C级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：现有德国服务体系、常见故障、备件、维修培训、保修流程与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>南馆顺路，安排在 Day 2 中午前后快速完成。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid">
+<div><h4>产品 / 看点</h4><p>海康旗下，扫地机+割草机双线。</p></div>
+<div><h4>必问问题</h4><ol><li>针对现场产品：海康旗下，扫地机+割草机双线 —— 这项能力目前是否已量产、德国版何时可交付？</li><li>德国是否已有经销商或独家代理？区域保护怎么做？</li><li>德国售后由谁负责？备件库、RMA、维修培训能否给本地伙伴？</li><li>主力导航方案在树荫、窄通道、坡地、无 RTK 场景的失效边界是什么？</li><li>Dealer price / MOQ / Demo unit / 年度目标分别是多少？</li></ol></div>
+</div><div class="repairbox"><h4>维修合作切入</h4><ul><li>割草机器人属于高价值、售后链条较复杂的产品，本地维修可减少整机跨境退运。</li><li>重点确认德国是否已有维修中心；如已有，继续问是否需要区域覆盖、峰值 RMA、复杂故障或第三方授权维修补充。</li><li>合作落点：故障诊断、模块维修/更换、备件仓、保修案件、RMA 报告、维修培训与技术支持。</li></ul></div><div class="repairbox"><h4>RMA / 售后必问</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-core-07-note" placeholder="联系人 / 职务 / 报价 / MOQ / 下一步 / 截止日"></textarea></label>
+<div class="actions"><a class="smallbtn" href="https://www.ezviz.com" target="_blank">品牌官网 ↗</a><button class="savecollapse" data-target="d2-core-07" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-C" data-day="core" data-hall="南馆｜Hall 1.2 → Hall 2.2" data-priority="C" data-search="lumistar（皓翊星辰 · tero） h2.2-163 网球机器人 德国体育渠道：俱乐部/教练场景、经销价格、app 本地化、备件售后、demo 合作">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-core-08" type="checkbox"/><span></span></label>
+<div class="seq">08</div>
+<div class="headings"><div class="brand">LUMISTAR（皓翊星辰 · TERO）</div><div class="meta"><b>H2.2-163</b> · 网球机器人 · 中国</div></div>
+<span class="prio">C级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：现有德国服务体系、常见故障、备件、维修培训、保修流程与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>CES 起势的新品牌，早期合作条件可能更好。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid">
+<div><h4>产品 / 看点</h4><p>CES 2026 首发 TERO AI 网球训练伙伴，实时计算机视觉，约 0.1 秒反应，据表现自动调节速度与难度；2026年3月预售、5月正式销售。同时参加 9月3日 ShowStoppers。</p></div>
+<div><h4>必问问题</h4><ol><li>针对现场产品：CES 2026 首发 TERO AI 网球训练伙伴，实时计算机视觉，约 0.1 秒反应，据表现自动调节速度与难度 —— 这项能力目前是否已量产、德国版何时可交付？</li><li>德国市场是面向个人、俱乐部还是教练？现有欧洲渠道在哪里？</li><li>App 是否支持德语？固件 OTA、数据账户和售后由谁负责？</li><li>球轮/电池/发球机构等易损件是否可本地备货？</li><li>Dealer price、MOQ、Demo unit、俱乐部试用合作条件是什么？</li></ol></div>
+</div><div class="repairbox"><h4>维修合作切入</h4><ul><li>网球机器人属于高价值、售后链条较复杂的产品，本地维修可减少整机跨境退运。</li><li>重点确认德国是否已有维修中心；如已有，继续问是否需要区域覆盖、峰值 RMA、复杂故障或第三方授权维修补充。</li><li>合作落点：故障诊断、模块维修/更换、备件仓、保修案件、RMA 报告、维修培训与技术支持。</li></ul></div><div class="repairbox"><h4>RMA / 售后必问</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-core-08-note" placeholder="联系人 / 职务 / 报价 / MOQ / 下一步 / 截止日"></textarea></label>
+<div class="actions"><a class="smallbtn" href="https://www.lumistar.com" target="_blank">品牌官网 ↗</a><button class="savecollapse" data-target="d2-core-08" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article></div><div class="block"><div class="blocktitle"><span class="time">13:00–13:45</span><span class="hall">午餐 + 转 Hall 25</span></div><div class="tip" style="margin:6px 0"><b>执行：</b>休息、整理名片、补录报价；不要在这个时段临时跨馆。</div></div><div class="block"><div class="blocktitle"><span class="time">13:45–16:15</span><span class="hall">Hall 25｜IFA Next 外骨骼 / 新技术</span></div><article class="stop priority-B" data-day="core" data-hall="Hall 25｜IFA Next 外骨骼 / 新技术" data-priority="B" data-search="seeppo h25-285 外骨骼 德国市场导入：产品定位、ce/适用法规、试用样机、经销条件、售后与责任边界">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-core-09" type="checkbox"/><span></span></label>
+<div class="seq">09</div>
+<div class="headings"><div class="brand">SEEPPO</div><div class="meta"><b>H25-285</b> · 外骨骼 · 中国</div></div>
+<span class="prio">B级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：现有德国服务体系、常见故障、备件、维修培训、保修流程与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>康复/助老赛道，若关注养老市场值得看。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid">
+<div><h4>产品 / 看点</h4><p>官方目录同时命中 exoskeleton / walk / rehab 关键词，方向为行走辅助与康复。</p></div>
+<div><h4>必问问题</h4><ol><li>针对现场产品：官方目录同时命中 exoskeleton / walk / rehab 关键词，方向为行走辅助与康复 —— 这项能力目前是否已量产、德国版何时可交付？</li><li>产品在欧盟按什么产品类别销售？CE 文件/测试报告能否给合作方审核？</li><li>德国目标用户是谁：户外、老人助行、工业还是康复？是否涉及医疗器械定位？</li><li>能否提供 Demo 样机、销售培训、维修工具和备件？</li><li>德国经销价、MOQ、独家/非独家条件和年度目标是什么？</li></ol></div>
+</div><div class="repairbox"><h4>维修合作切入</h4><ul><li>外骨骼属于高价值、售后链条较复杂的产品，本地维修可减少整机跨境退运。</li><li>重点确认德国是否已有维修中心；如已有，继续问是否需要区域覆盖、峰值 RMA、复杂故障或第三方授权维修补充。</li><li>合作落点：故障诊断、模块维修/更换、备件仓、保修案件、RMA 报告、维修培训与技术支持。</li></ul></div><div class="repairbox"><h4>RMA / 售后必问</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-core-09-note" placeholder="联系人 / 职务 / 报价 / MOQ / 下一步 / 截止日"></textarea></label>
+<div class="actions"><a class="smallbtn" href="https://www.seeppo.com" target="_blank">品牌官网 ↗</a><button class="savecollapse" data-target="d2-core-09" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-C" data-day="core" data-hall="Hall 25｜IFA Next 外骨骼 / 新技术" data-priority="C" data-search="vigx（肯綮科技 kenqing） h25-353 外骨骼 德国市场导入：产品定位、ce/适用法规、试用样机、经销条件、售后与责任边界">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-core-10" type="checkbox"/><span></span></label>
+<div class="seq">10</div>
+<div class="headings"><div class="brand">VIGX（肯綮科技 Kenqing）</div><div class="meta"><b>H25-353</b> · 外骨骼 · 中国（南京）</div></div>
+<span class="prio">C级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：现有德国服务体系、常见故障、备件、维修培训、保修流程与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>技术迭代最激进的一档，口袋级产品是差异化切口。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid">
+<div><h4>产品 / 看点</h4><p>2020 全球首款量产消费级外骨骼；2024 首款腰腿手一体式；2025 模块化超轻型前置式；IFA 2026 主推「口袋级」穿戴外骨骼。</p></div>
+<div><h4>必问问题</h4><ol><li>针对现场产品：2020 全球首款量产消费级外骨骼 —— 这项能力目前是否已量产、德国版何时可交付？</li><li>产品在欧盟按什么产品类别销售？CE 文件/测试报告能否给合作方审核？</li><li>德国目标用户是谁：户外、老人助行、工业还是康复？是否涉及医疗器械定位？</li><li>能否提供 Demo 样机、销售培训、维修工具和备件？</li><li>德国经销价、MOQ、独家/非独家条件和年度目标是什么？</li></ol></div>
+</div><div class="repairbox"><h4>维修合作切入</h4><ul><li>外骨骼属于高价值、售后链条较复杂的产品，本地维修可减少整机跨境退运。</li><li>重点确认德国是否已有维修中心；如已有，继续问是否需要区域覆盖、峰值 RMA、复杂故障或第三方授权维修补充。</li><li>合作落点：故障诊断、模块维修/更换、备件仓、保修案件、RMA 报告、维修培训与技术支持。</li></ul></div><div class="repairbox"><h4>RMA / 售后必问</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-core-10-note" placeholder="联系人 / 职务 / 报价 / MOQ / 下一步 / 截止日"></textarea></label>
+<div class="actions"><a class="smallbtn" href="https://www.vigx.com" target="_blank">品牌官网 ↗</a><button class="savecollapse" data-target="d2-core-10" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-C" data-day="core" data-hall="Hall 25｜IFA Next 外骨骼 / 新技术" data-priority="C" data-search="frt robotics h25-361 外骨骼 德国市场导入：产品定位、ce/适用法规、试用样机、经销条件、售后与责任边界">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-core-11" type="checkbox"/><span></span></label>
+<div class="seq">11</div>
+<div class="headings"><div class="brand">FRT ROBOTICS</div><div class="meta"><b>H25-361</b> · 外骨骼 · 中国</div></div>
+<span class="prio">C级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：现有德国服务体系、常见故障、备件、维修培训、保修流程与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>IFA Next 初创区，技术方向待现场确认。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid">
+<div><h4>产品 / 看点</h4><p>与 BDCI、Yeomyeong Lighting 同属 H25-361 组团。</p></div>
+<div><h4>必问问题</h4><ol><li>针对现场产品：与 BDCI、Yeomyeong Lighting 同属 H25-361 组团 —— 这项能力目前是否已量产、德国版何时可交付？</li><li>产品在欧盟按什么产品类别销售？CE 文件/测试报告能否给合作方审核？</li><li>德国目标用户是谁：户外、老人助行、工业还是康复？是否涉及医疗器械定位？</li><li>能否提供 Demo 样机、销售培训、维修工具和备件？</li><li>德国经销价、MOQ、独家/非独家条件和年度目标是什么？</li></ol></div>
+</div><div class="repairbox"><h4>维修合作切入</h4><ul><li>外骨骼属于高价值、售后链条较复杂的产品，本地维修可减少整机跨境退运。</li><li>重点确认德国是否已有维修中心；如已有，继续问是否需要区域覆盖、峰值 RMA、复杂故障或第三方授权维修补充。</li><li>合作落点：故障诊断、模块维修/更换、备件仓、保修案件、RMA 报告、维修培训与技术支持。</li></ul></div><div class="repairbox"><h4>RMA / 售后必问</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-core-11-note" placeholder="联系人 / 职务 / 报价 / MOQ / 下一步 / 截止日"></textarea></label>
+<div class="actions"><a class="smallbtn" href="https://www.frtrobotics.com" target="_blank">品牌官网 ↗</a><button class="savecollapse" data-target="d2-core-11" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-C" data-day="core" data-hall="Hall 25｜IFA Next 外骨骼 / 新技术" data-priority="C" data-search="head robotic h25-394 外骨骼 德国市场导入：产品定位、ce/适用法规、试用样机、经销条件、售后与责任边界">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-core-12" type="checkbox"/><span></span></label>
+<div class="seq">12</div>
+<div class="headings"><div class="brand">Head Robotic</div><div class="meta"><b>H25-394</b> · 外骨骼 · 中国香港</div></div>
+<span class="prio">C级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：现有德国服务体系、常见故障、备件、维修培训、保修流程与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>官方点名，可信度较高。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid">
+<div><h4>产品 / 看点</h4><p>IFA 官方新闻稿点名的可穿戴外骨骼参展商之一。</p></div>
+<div><h4>必问问题</h4><ol><li>针对现场产品：IFA 官方新闻稿点名的可穿戴外骨骼参展商之一 —— 这项能力目前是否已量产、德国版何时可交付？</li><li>产品在欧盟按什么产品类别销售？CE 文件/测试报告能否给合作方审核？</li><li>德国目标用户是谁：户外、老人助行、工业还是康复？是否涉及医疗器械定位？</li><li>能否提供 Demo 样机、销售培训、维修工具和备件？</li><li>德国经销价、MOQ、独家/非独家条件和年度目标是什么？</li></ol></div>
+</div><div class="repairbox"><h4>维修合作切入</h4><ul><li>外骨骼属于高价值、售后链条较复杂的产品，本地维修可减少整机跨境退运。</li><li>重点确认德国是否已有维修中心；如已有，继续问是否需要区域覆盖、峰值 RMA、复杂故障或第三方授权维修补充。</li><li>合作落点：故障诊断、模块维修/更换、备件仓、保修案件、RMA 报告、维修培训与技术支持。</li></ul></div><div class="repairbox"><h4>RMA / 售后必问</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-core-12-note" placeholder="联系人 / 职务 / 报价 / MOQ / 下一步 / 截止日"></textarea></label>
+<div class="actions"><a class="smallbtn" href="https://headrobotic.com" target="_blank">品牌官网 ↗</a><button class="savecollapse" data-target="d2-core-12" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article></div><div class="block"><div class="blocktitle"><span class="time">16:15–17:30</span><span class="hall">Hall 26｜Global Markets，可选 OEM/ODM</span></div><article class="stop priority-C" data-day="core" data-hall="Hall 26｜Global Markets，可选 OEM/ODM" data-priority="C" data-search="purily ai robot（清水智能） h26a-377 割草机器人 oem/odm 条件、德国/欧盟认证、moq、备件供应、固件/品牌定制">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-core-13" type="checkbox"/><span></span></label>
+<div class="seq">13</div>
+<div class="headings"><div class="brand">Purily AI Robot（清水智能）</div><div class="meta"><b>H26a-377</b> · 割草机器人 · 中国</div></div>
+<span class="prio">C级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：现有德国服务体系、常见故障、备件、维修培训、保修流程与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>若考虑自有品牌贴牌，可在 Global Markets 谈。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid">
+<div><h4>产品 / 看点</h4><p>IFA Global Markets（OEM/ODM 采购平台，仅 9月5–7日开放）。</p></div>
+<div><h4>必问问题</h4><ol><li>针对现场产品：IFA Global Markets（OEM/ODM 采购平台，仅 9月5–7日开放） —— 这项能力目前是否已量产、德国版何时可交付？</li><li>德国是否已有经销商或独家代理？区域保护怎么做？</li><li>德国售后由谁负责？备件库、RMA、维修培训能否给本地伙伴？</li><li>主力导航方案在树荫、窄通道、坡地、无 RTK 场景的失效边界是什么？</li><li>Dealer price / MOQ / Demo unit / 年度目标分别是多少？</li></ol></div>
+</div><div class="repairbox"><h4>维修合作切入</h4><ul><li>割草机器人属于高价值、售后链条较复杂的产品，本地维修可减少整机跨境退运。</li><li>重点确认德国是否已有维修中心；如已有，继续问是否需要区域覆盖、峰值 RMA、复杂故障或第三方授权维修补充。</li><li>合作落点：故障诊断、模块维修/更换、备件仓、保修案件、RMA 报告、维修培训与技术支持。</li></ul></div><div class="repairbox"><h4>RMA / 售后必问</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-core-13-note" placeholder="联系人 / 职务 / 报价 / MOQ / 下一步 / 截止日"></textarea></label>
+<div class="actions"><button class="savecollapse" data-target="d2-core-13" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-C" data-day="core" data-hall="Hall 26｜Global Markets，可选 OEM/ODM" data-priority="C" data-search="cixi gardeng h26c-184 割草机器人 oem/odm 条件、德国/欧盟认证、moq、备件供应、固件/品牌定制">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-core-14" type="checkbox"/><span></span></label>
+<div class="seq">14</div>
+<div class="headings"><div class="brand">Cixi Gardeng</div><div class="meta"><b>H26c-184</b> · 割草机器人 · 中国</div></div>
+<span class="prio">C级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：现有德国服务体系、常见故障、备件、维修培训、保修流程与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>供应链层，采购导向。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid">
+<div><h4>产品 / 看点</h4><p>慈溪园林电器，Global Markets 供应商。</p></div>
+<div><h4>必问问题</h4><ol><li>针对现场产品：慈溪园林电器，Global Markets 供应商 —— 这项能力目前是否已量产、德国版何时可交付？</li><li>德国是否已有经销商或独家代理？区域保护怎么做？</li><li>德国售后由谁负责？备件库、RMA、维修培训能否给本地伙伴？</li><li>主力导航方案在树荫、窄通道、坡地、无 RTK 场景的失效边界是什么？</li><li>Dealer price / MOQ / Demo unit / 年度目标分别是多少？</li></ol></div>
+</div><div class="repairbox"><h4>维修合作切入</h4><ul><li>割草机器人属于高价值、售后链条较复杂的产品，本地维修可减少整机跨境退运。</li><li>重点确认德国是否已有维修中心；如已有，继续问是否需要区域覆盖、峰值 RMA、复杂故障或第三方授权维修补充。</li><li>合作落点：故障诊断、模块维修/更换、备件仓、保修案件、RMA 报告、维修培训与技术支持。</li></ul></div><div class="repairbox"><h4>RMA / 售后必问</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-core-14-note" placeholder="联系人 / 职务 / 报价 / MOQ / 下一步 / 截止日"></textarea></label>
+<div class="actions"><button class="savecollapse" data-target="d2-core-14" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article></div><div class="block"><div class="blocktitle"><span class="time">机动 60–90 分钟</span><span class="hall">CityCube Hall B｜电动滑板车临时加程</span></div><div class="scooter-note">建议顺序：NAVEE 111 → AOTOS 113 → TENDEX 139 → Urban Glide 140 → YOUIN 141 → Coolfly 143 → Esportlet 146 → isinwheel 148 → WOOWIND 152。若还有 30–45 分钟，再去 Hall 4.2 → Pure Electric H4.2-130。</div><article class="stop priority-A" data-day="scooter" data-hall="CityCube Hall B｜电动滑板车临时加程" data-priority="A" data-search="NAVEE CCBB-111 / MT-107 电动滑板车 德国维修 rma 售后 备件">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-scooter-01" type="checkbox"/><span></span></label>
+<div class="seq">15</div>
+<div class="headings"><div class="brand">NAVEE</div><div class="meta"><b>CCBB-111 / MT-107</b> · 电动滑板车 / 微出行</div></div>
+<span class="prio">A级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：常见故障、备件、诊断工具、保修退换政策、维修培训与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>重点目标：产品成熟度高，优先谈德国本地维修、RMA、备件和售后授权。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid"><div><h4>产品 / 看点</h4><p>重点检查：电池/BMS、控制器、电机、显示/通信、充电器、刹车、折叠机构、固件与备件体系。</p></div><div><h4>必问问题</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div></div><div class="repairbox"><h4>维修合作切入</h4><ul><li>电动滑板车整机跨境退换成本高，本地维修价值直接体现在降低物流、换新和等待时间。</li><li>优先确认最常见的电池/BMS、控制器、电机、显示、充电、刹车及折叠机构故障。</li><li>合作落点：德国收件、故障诊断、模块更换、备件仓、保修/RMA报告和维修SLA。</li></ul></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-scooter-01-note" placeholder="联系人 / 职务 / Email / WhatsApp / 常见故障 / 备件 / RMA / 下一步"></textarea></label>
+<div class="actions"><button class="savecollapse" data-target="d2-scooter-01" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-B" data-day="scooter" data-hall="CityCube Hall B｜电动滑板车临时加程" data-priority="B" data-search="AOTOS CCBB-113 / MT-103 电动滑板车 德国维修 rma 售后 备件">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-scooter-02" type="checkbox"/><span></span></label>
+<div class="seq">16</div>
+<div class="headings"><div class="brand">AOTOS</div><div class="meta"><b>CCBB-113 / MT-103</b> · 电动滑板车 / 微出行</div></div>
+<span class="prio">B级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：常见故障、备件、诊断工具、保修退换政策、维修培训与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>先确认现场是否以电动滑板车为核心，再判断德国维修/RMA机会。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid"><div><h4>产品 / 看点</h4><p>重点检查：电池/BMS、控制器、电机、显示/通信、充电器、刹车、折叠机构、固件与备件体系。</p></div><div><h4>必问问题</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div></div><div class="repairbox"><h4>维修合作切入</h4><ul><li>电动滑板车整机跨境退换成本高，本地维修价值直接体现在降低物流、换新和等待时间。</li><li>优先确认最常见的电池/BMS、控制器、电机、显示、充电、刹车及折叠机构故障。</li><li>合作落点：德国收件、故障诊断、模块更换、备件仓、保修/RMA报告和维修SLA。</li></ul></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-scooter-02-note" placeholder="联系人 / 职务 / Email / WhatsApp / 常见故障 / 备件 / RMA / 下一步"></textarea></label>
+<div class="actions"><button class="savecollapse" data-target="d2-scooter-02" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-C" data-day="scooter" data-hall="CityCube Hall B｜电动滑板车临时加程" data-priority="C" data-search="SINOTEK CCBB-126 电动滑板车 德国维修 rma 售后 备件">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-scooter-03" type="checkbox"/><span></span></label>
+<div class="seq">17</div>
+<div class="headings"><div class="brand">SINOTEK</div><div class="meta"><b>CCBB-126</b> · 电动滑板车 / 微出行</div></div>
+<span class="prio">C级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：常见故障、备件、诊断工具、保修退换政策、维修培训与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>顺路快扫；重点拿联系人并确认德国售后模式。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid"><div><h4>产品 / 看点</h4><p>重点检查：电池/BMS、控制器、电机、显示/通信、充电器、刹车、折叠机构、固件与备件体系。</p></div><div><h4>必问问题</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div></div><div class="repairbox"><h4>维修合作切入</h4><ul><li>电动滑板车整机跨境退换成本高，本地维修价值直接体现在降低物流、换新和等待时间。</li><li>优先确认最常见的电池/BMS、控制器、电机、显示、充电、刹车及折叠机构故障。</li><li>合作落点：德国收件、故障诊断、模块更换、备件仓、保修/RMA报告和维修SLA。</li></ul></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-scooter-03-note" placeholder="联系人 / 职务 / Email / WhatsApp / 常见故障 / 备件 / RMA / 下一步"></textarea></label>
+<div class="actions"><button class="savecollapse" data-target="d2-scooter-03" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-C" data-day="scooter" data-hall="CityCube Hall B｜电动滑板车临时加程" data-priority="C" data-search="Dongguan EC Technology CCBB-128 电动滑板车 德国维修 rma 售后 备件">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-scooter-04" type="checkbox"/><span></span></label>
+<div class="seq">18</div>
+<div class="headings"><div class="brand">Dongguan EC Technology</div><div class="meta"><b>CCBB-128</b> · 电动滑板车 / 微出行</div></div>
+<span class="prio">C级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：常见故障、备件、诊断工具、保修退换政策、维修培训与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>供应链型目标；重点确认成品/模块供货、备件与欧洲售后责任。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid"><div><h4>产品 / 看点</h4><p>重点检查：电池/BMS、控制器、电机、显示/通信、充电器、刹车、折叠机构、固件与备件体系。</p></div><div><h4>必问问题</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div></div><div class="repairbox"><h4>维修合作切入</h4><ul><li>电动滑板车整机跨境退换成本高，本地维修价值直接体现在降低物流、换新和等待时间。</li><li>优先确认最常见的电池/BMS、控制器、电机、显示、充电、刹车及折叠机构故障。</li><li>合作落点：德国收件、故障诊断、模块更换、备件仓、保修/RMA报告和维修SLA。</li></ul></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-scooter-04-note" placeholder="联系人 / 职务 / Email / WhatsApp / 常见故障 / 备件 / RMA / 下一步"></textarea></label>
+<div class="actions"><button class="savecollapse" data-target="d2-scooter-04" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-C" data-day="scooter" data-hall="CityCube Hall B｜电动滑板车临时加程" data-priority="C" data-search="Dashmoto CCBB-129 电动滑板车 德国维修 rma 售后 备件">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-scooter-05" type="checkbox"/><span></span></label>
+<div class="seq">19</div>
+<div class="headings"><div class="brand">Dashmoto</div><div class="meta"><b>CCBB-129</b> · 电动滑板车 / 微出行</div></div>
+<span class="prio">C级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：常见故障、备件、诊断工具、保修退换政策、维修培训与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>顺路信息收集；先确认德国市场规模和售后模式。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid"><div><h4>产品 / 看点</h4><p>重点检查：电池/BMS、控制器、电机、显示/通信、充电器、刹车、折叠机构、固件与备件体系。</p></div><div><h4>必问问题</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div></div><div class="repairbox"><h4>维修合作切入</h4><ul><li>电动滑板车整机跨境退换成本高，本地维修价值直接体现在降低物流、换新和等待时间。</li><li>优先确认最常见的电池/BMS、控制器、电机、显示、充电、刹车及折叠机构故障。</li><li>合作落点：德国收件、故障诊断、模块更换、备件仓、保修/RMA报告和维修SLA。</li></ul></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-scooter-05-note" placeholder="联系人 / 职务 / Email / WhatsApp / 常见故障 / 备件 / RMA / 下一步"></textarea></label>
+<div class="actions"><button class="savecollapse" data-target="d2-scooter-05" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-B" data-day="scooter" data-hall="CityCube Hall B｜电动滑板车临时加程" data-priority="B" data-search="TENDEX CCBB-139 电动滑板车 德国维修 rma 售后 备件">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-scooter-06" type="checkbox"/><span></span></label>
+<div class="seq">20</div>
+<div class="headings"><div class="brand">TENDEX</div><div class="meta"><b>CCBB-139</b> · 电动滑板车 / 微出行</div></div>
+<span class="prio">B级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：常见故障、备件、诊断工具、保修退换政策、维修培训与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>快速判断德国渠道、保修退换率和第三方维修需求。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid"><div><h4>产品 / 看点</h4><p>重点检查：电池/BMS、控制器、电机、显示/通信、充电器、刹车、折叠机构、固件与备件体系。</p></div><div><h4>必问问题</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div></div><div class="repairbox"><h4>维修合作切入</h4><ul><li>电动滑板车整机跨境退换成本高，本地维修价值直接体现在降低物流、换新和等待时间。</li><li>优先确认最常见的电池/BMS、控制器、电机、显示、充电、刹车及折叠机构故障。</li><li>合作落点：德国收件、故障诊断、模块更换、备件仓、保修/RMA报告和维修SLA。</li></ul></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-scooter-06-note" placeholder="联系人 / 职务 / Email / WhatsApp / 常见故障 / 备件 / RMA / 下一步"></textarea></label>
+<div class="actions"><button class="savecollapse" data-target="d2-scooter-06" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-A" data-day="scooter" data-hall="CityCube Hall B｜电动滑板车临时加程" data-priority="A" data-search="Urban Glide CCBB-140 电动滑板车 德国维修 rma 售后 备件">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-scooter-07" type="checkbox"/><span></span></label>
+<div class="seq">21</div>
+<div class="headings"><div class="brand">Urban Glide</div><div class="meta"><b>CCBB-140</b> · 电动滑板车 / 微出行</div></div>
+<span class="prio">A级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：常见故障、备件、诊断工具、保修退换政策、维修培训与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>欧洲市场相关性高；重点谈备件、维修网络与德国本地服务覆盖。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid"><div><h4>产品 / 看点</h4><p>重点检查：电池/BMS、控制器、电机、显示/通信、充电器、刹车、折叠机构、固件与备件体系。</p></div><div><h4>必问问题</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div></div><div class="repairbox"><h4>维修合作切入</h4><ul><li>电动滑板车整机跨境退换成本高，本地维修价值直接体现在降低物流、换新和等待时间。</li><li>优先确认最常见的电池/BMS、控制器、电机、显示、充电、刹车及折叠机构故障。</li><li>合作落点：德国收件、故障诊断、模块更换、备件仓、保修/RMA报告和维修SLA。</li></ul></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-scooter-07-note" placeholder="联系人 / 职务 / Email / WhatsApp / 常见故障 / 备件 / RMA / 下一步"></textarea></label>
+<div class="actions"><button class="savecollapse" data-target="d2-scooter-07" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-A" data-day="scooter" data-hall="CityCube Hall B｜电动滑板车临时加程" data-priority="A" data-search="YOUIN CCBB-141 / MT-109 电动滑板车 德国维修 rma 售后 备件">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-scooter-08" type="checkbox"/><span></span></label>
+<div class="seq">22</div>
+<div class="headings"><div class="brand">YOUIN</div><div class="meta"><b>CCBB-141 / MT-109</b> · 电动滑板车 / 微出行</div></div>
+<span class="prio">A级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：常见故障、备件、诊断工具、保修退换政策、维修培训与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>欧洲品牌背景，优先确认德国本地 RMA / 授权维修合作。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid"><div><h4>产品 / 看点</h4><p>重点检查：电池/BMS、控制器、电机、显示/通信、充电器、刹车、折叠机构、固件与备件体系。</p></div><div><h4>必问问题</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div></div><div class="repairbox"><h4>维修合作切入</h4><ul><li>电动滑板车整机跨境退换成本高，本地维修价值直接体现在降低物流、换新和等待时间。</li><li>优先确认最常见的电池/BMS、控制器、电机、显示、充电、刹车及折叠机构故障。</li><li>合作落点：德国收件、故障诊断、模块更换、备件仓、保修/RMA报告和维修SLA。</li></ul></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-scooter-08-note" placeholder="联系人 / 职务 / Email / WhatsApp / 常见故障 / 备件 / RMA / 下一步"></textarea></label>
+<div class="actions"><button class="savecollapse" data-target="d2-scooter-08" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-B" data-day="scooter" data-hall="CityCube Hall B｜电动滑板车临时加程" data-priority="B" data-search="Coolfly CCBB-143 电动滑板车 德国维修 rma 售后 备件">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-scooter-09" type="checkbox"/><span></span></label>
+<div class="seq">23</div>
+<div class="headings"><div class="brand">Coolfly</div><div class="meta"><b>CCBB-143</b> · 电动滑板车 / 微出行</div></div>
+<span class="prio">B级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：常见故障、备件、诊断工具、保修退换政策、维修培训与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>重点问德国销量、常见故障、备件供应与本地维修需求。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid"><div><h4>产品 / 看点</h4><p>重点检查：电池/BMS、控制器、电机、显示/通信、充电器、刹车、折叠机构、固件与备件体系。</p></div><div><h4>必问问题</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div></div><div class="repairbox"><h4>维修合作切入</h4><ul><li>电动滑板车整机跨境退换成本高，本地维修价值直接体现在降低物流、换新和等待时间。</li><li>优先确认最常见的电池/BMS、控制器、电机、显示、充电、刹车及折叠机构故障。</li><li>合作落点：德国收件、故障诊断、模块更换、备件仓、保修/RMA报告和维修SLA。</li></ul></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-scooter-09-note" placeholder="联系人 / 职务 / Email / WhatsApp / 常见故障 / 备件 / RMA / 下一步"></textarea></label>
+<div class="actions"><button class="savecollapse" data-target="d2-scooter-09" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-B" data-day="scooter" data-hall="CityCube Hall B｜电动滑板车临时加程" data-priority="B" data-search="Esportlet CCBB-146 电动滑板车 德国维修 rma 售后 备件">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-scooter-10" type="checkbox"/><span></span></label>
+<div class="seq">24</div>
+<div class="headings"><div class="brand">Esportlet</div><div class="meta"><b>CCBB-146</b> · 电动滑板车 / 微出行</div></div>
+<span class="prio">B级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：常见故障、备件、诊断工具、保修退换政策、维修培训与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>快速判断渠道与售后合作空间。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid"><div><h4>产品 / 看点</h4><p>重点检查：电池/BMS、控制器、电机、显示/通信、充电器、刹车、折叠机构、固件与备件体系。</p></div><div><h4>必问问题</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div></div><div class="repairbox"><h4>维修合作切入</h4><ul><li>电动滑板车整机跨境退换成本高，本地维修价值直接体现在降低物流、换新和等待时间。</li><li>优先确认最常见的电池/BMS、控制器、电机、显示、充电、刹车及折叠机构故障。</li><li>合作落点：德国收件、故障诊断、模块更换、备件仓、保修/RMA报告和维修SLA。</li></ul></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-scooter-10-note" placeholder="联系人 / 职务 / Email / WhatsApp / 常见故障 / 备件 / RMA / 下一步"></textarea></label>
+<div class="actions"><button class="savecollapse" data-target="d2-scooter-10" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-A" data-day="scooter" data-hall="CityCube Hall B｜电动滑板车临时加程" data-priority="A" data-search="isinwheel CCBB-148 电动滑板车 德国维修 rma 售后 备件">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-scooter-11" type="checkbox"/><span></span></label>
+<div class="seq">25</div>
+<div class="headings"><div class="brand">isinwheel</div><div class="meta"><b>CCBB-148</b> · 电动滑板车 / 微出行</div></div>
+<span class="prio">A级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：常见故障、备件、诊断工具、保修退换政策、维修培训与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>跨境电商属性强，本地维修可直接降低退换货和物流成本。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid"><div><h4>产品 / 看点</h4><p>重点检查：电池/BMS、控制器、电机、显示/通信、充电器、刹车、折叠机构、固件与备件体系。</p></div><div><h4>必问问题</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div></div><div class="repairbox"><h4>维修合作切入</h4><ul><li>电动滑板车整机跨境退换成本高，本地维修价值直接体现在降低物流、换新和等待时间。</li><li>优先确认最常见的电池/BMS、控制器、电机、显示、充电、刹车及折叠机构故障。</li><li>合作落点：德国收件、故障诊断、模块更换、备件仓、保修/RMA报告和维修SLA。</li></ul></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-scooter-11-note" placeholder="联系人 / 职务 / Email / WhatsApp / 常见故障 / 备件 / RMA / 下一步"></textarea></label>
+<div class="actions"><button class="savecollapse" data-target="d2-scooter-11" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-B" data-day="scooter" data-hall="CityCube Hall B｜电动滑板车临时加程" data-priority="B" data-search="WOOWIND CCBB-152 电动滑板车 德国维修 rma 售后 备件">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-scooter-12" type="checkbox"/><span></span></label>
+<div class="seq">26</div>
+<div class="headings"><div class="brand">WOOWIND</div><div class="meta"><b>CCBB-152</b> · 电动滑板车 / 微出行</div></div>
+<span class="prio">B级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：常见故障、备件、诊断工具、保修退换政策、维修培训与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>确认德国销售计划、RMA处理和备件政策。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid"><div><h4>产品 / 看点</h4><p>重点检查：电池/BMS、控制器、电机、显示/通信、充电器、刹车、折叠机构、固件与备件体系。</p></div><div><h4>必问问题</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div></div><div class="repairbox"><h4>维修合作切入</h4><ul><li>电动滑板车整机跨境退换成本高，本地维修价值直接体现在降低物流、换新和等待时间。</li><li>优先确认最常见的电池/BMS、控制器、电机、显示、充电、刹车及折叠机构故障。</li><li>合作落点：德国收件、故障诊断、模块更换、备件仓、保修/RMA报告和维修SLA。</li></ul></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-scooter-12-note" placeholder="联系人 / 职务 / Email / WhatsApp / 常见故障 / 备件 / RMA / 下一步"></textarea></label>
+<div class="actions"><button class="savecollapse" data-target="d2-scooter-12" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article><article class="stop priority-A" data-day="scooter" data-hall="Hall 4.2｜Pure Electric" data-priority="A" data-search="Pure Electric H4.2-130 / MT-100 电动滑板车 德国维修 rma 售后 备件">
+<div class="stop-top">
+<label class="checkwrap"><input class="taskcheck" data-id="d2-scooter-13" type="checkbox"/><span></span></label>
+<div class="seq">27</div>
+<div class="headings"><div class="brand">Pure Electric</div><div class="meta"><b>H4.2-130 / MT-100</b> · 电动滑板车 / 微出行</div></div>
+<span class="prio">A级</span>
+</div>
+<div class="goal"><strong>这站要谈：</strong>德国本地维修 / RMA / 售后合作：常见故障、备件、诊断工具、保修退换政策、维修培训与 SLA</div>
+<div class="why"><strong>现场抓手：</strong>独立加程重点目标；直接谈德国维修能力、保修/RMA和备件体系。</div>
+<details><summary>▶ 产品要点 / 维修合作切入 / Q&amp;A / 开场话术 ▼</summary>
+<div class="detailgrid"><div><h4>产品 / 看点</h4><p>重点检查：电池/BMS、控制器、电机、显示/通信、充电器、刹车、折叠机构、固件与备件体系。</p></div><div><h4>必问问题</h4><ol><li>How do you currently handle defective units in Germany?</li><li>Do you already have an authorized repair / RMA partner in Germany?</li><li>Which failures are most common and which modules are field-replaceable?</li><li>Can you supply spare parts, diagnostic tools, service manuals and firmware?</li><li>What is your current replacement-vs-repair policy and RMA turnaround time?</li></ol></div></div><div class="repairbox"><h4>维修合作切入</h4><ul><li>电动滑板车整机跨境退换成本高，本地维修价值直接体现在降低物流、换新和等待时间。</li><li>优先确认最常见的电池/BMS、控制器、电机、显示、充电、刹车及折叠机构故障。</li><li>合作落点：德国收件、故障诊断、模块更换、备件仓、保修/RMA报告和维修SLA。</li></ul></div>
+<div class="script"><h4>建议开场（中文 / 德语 / 英语）</h4><p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p><p><b>Deutsch：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p><p><b>English：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p></div>
+<label class="noteslabel">现场记录<textarea class="notes" data-id="d2-scooter-13-note" placeholder="联系人 / 职务 / Email / WhatsApp / 常见故障 / 备件 / RMA / 下一步"></textarea></label>
+<div class="actions"><button class="savecollapse" data-target="d2-scooter-13" type="button">▲ 保存并收起，继续下一站</button></div>
+</details>
+</article></div></section>
+<section class="tip"><h3>每次离开展位前，必须拿到 5 个结果</h3>
+<ol>
+<li>联系人姓名 + 职务 + WhatsApp/微信/Email</li>
+<li>德国目前的维修 / RMA 由谁负责</li>
+<li>常见故障 + 可更换模块 + 备件供应方式</li>
+<li>维修培训 / 诊断工具 / Service Manual / Firmware 是否能提供</li>
+<li>明确下一步：负责人、资料、会议时间和合作评估流程</li>
+</ol></section>
+
+<div class="backupbar">
+<button class="export" id="exportBackup">导出第二天 JSON 备份</button>
+<button id="importBackup">导入第二天 JSON</button>
+<input accept=".json,application/json" id="backupFile" style="display:none" type="file"/>
+</div>
+<div class="footer">第二天独立执行版。核心展商资料来自此前 IFA 路线文件；电动滑板车为后续新增临时加程。现场记录仅保存在本页独立命名空间中。</div></main><script>
+const NS='IFA2026_DAY2_FULL_V1';
+const checks=[...document.querySelectorAll('.taskcheck')];
+const notes=[...document.querySelectorAll('.notes')];
+function ckKey(id){return NS+':check:'+id}
+function noteKey(id){return NS+':note:'+id}
+function saveProgress(){
+ let n=0;
+ checks.forEach(c=>{
+   localStorage.setItem(ckKey(c.dataset.id),c.checked?'1':'0');
+   const stop=c.closest('.stop'); stop.classList.toggle('done',c.checked);
+   if(c.checked)n++;
+ });
+ const p=checks.length?Math.round(n/checks.length*100):0;
+ document.getElementById('pct').textContent=p+'%';
+ document.getElementById('bar').style.width=p+'%';
+}
+checks.forEach(c=>{
+ c.checked=localStorage.getItem(ckKey(c.dataset.id))==='1';
+ c.addEventListener('change',saveProgress);
+});
+notes.forEach(n=>{
+ n.value=localStorage.getItem(noteKey(n.dataset.id))||'';
+ n.addEventListener('input',()=>localStorage.setItem(noteKey(n.dataset.id),n.value));
+});
+saveProgress();
+
+let current='all';
+const buttons=[...document.querySelectorAll('.filters button')];
+function applyFilter(){
+ const q=(document.getElementById('search').value||'').trim().toLowerCase();
+ document.querySelectorAll('.stop').forEach(s=>{
+   const pri=s.dataset.priority, day=s.dataset.day;
+   const okF=current==='all'||(current==='A'&&pri==='A')||(current==='core'&&day==='core')||(current==='scooter'&&day==='scooter');
+   const okQ=!q||(s.dataset.search||'').toLowerCase().includes(q)||s.textContent.toLowerCase().includes(q);
+   s.classList.toggle('hidden',!(okF&&okQ));
+ });
+}
+buttons.forEach(b=>b.addEventListener('click',()=>{
+ buttons.forEach(x=>x.classList.remove('active')); b.classList.add('active'); current=b.dataset.filter; applyFilter();
+}));
+document.getElementById('search').addEventListener('input',applyFilter);
+
+document.querySelectorAll('.savecollapse').forEach(btn=>{
+ btn.addEventListener('click',()=>{
+   const details=btn.closest('details');
+   const note=details.querySelector('.notes');
+   if(note) localStorage.setItem(noteKey(note.dataset.id),note.value);
+   details.open=false;
+   btn.closest('.stop').scrollIntoView({behavior:'smooth',block:'start'});
+ });
+});
+
+document.getElementById('exportBackup').addEventListener('click',()=>{
+ const items=[...document.querySelectorAll('.stop')].map(s=>{
+   const c=s.querySelector('.taskcheck'),n=s.querySelector('.notes');
+   return {
+     stableId:c?.dataset.id||'',
+     company:s.querySelector('.brand')?.textContent.trim()||'',
+     meta:s.querySelector('.meta')?.textContent.trim()||'',
+     priority:s.dataset.priority||'',
+     group:s.dataset.day||'',
+     done:!!c?.checked,
+     note:n?.value||''
+   };
+ });
+ const payload={schema:'ifa2026-visit-merge-v1',source:'day2-full-firstday-style',namespace:NS,date:'2026-09-05',exportedAt:new Date().toISOString(),items};
+ const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+ const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+ a.download='IFA2026_Day2_FULL_backup_'+new Date().toISOString().replace(/[:.]/g,'-')+'.json';
+ a.click(); URL.revokeObjectURL(a.href);
+});
+document.getElementById('importBackup').addEventListener('click',()=>document.getElementById('backupFile').click());
+document.getElementById('backupFile').addEventListener('change',async e=>{
+ const f=e.target.files[0]; if(!f)return;
+ try{
+   const d=JSON.parse(await f.text());
+   if(!Array.isArray(d.items)) throw new Error('格式不正确');
+   d.items.forEach(v=>{
+     if(!v.stableId)return;
+     localStorage.setItem(ckKey(v.stableId),v.done?'1':'0');
+     localStorage.setItem(noteKey(v.stableId+'-note'),typeof v.note==='string'?v.note:'');
+   });
+   location.reload();
+ }catch(err){alert('导入失败：'+err.message)}
+});
+
+// ===== 手机现场模式增强 =====
+let unfinishedOnly=false;
+function markSaved(){
+  const t=document.getElementById('lastSavedText');
+  if(!t)return;
+  const now=new Date();
+  t.textContent='已自动保存 · '+now.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+}
+document.querySelectorAll('.taskcheck').forEach(c=>c.addEventListener('change',markSaved));
+document.querySelectorAll('.notes').forEach(n=>n.addEventListener('input',markSaved));
+
+function visibleStops(){
+  return [...document.querySelectorAll('.stop')].filter(s=>!s.classList.contains('hidden'));
+}
+function applyUnfinished(){
+  document.querySelectorAll('.stop').forEach(s=>{
+    s.classList.remove('unfinished-hidden');
+  });
+  if(!unfinishedOnly)return;
+  document.querySelectorAll('.stop').forEach(s=>{
+    const c=s.querySelector('.taskcheck');
+    if(c && c.checked) s.classList.add('unfinished-hidden');
+  });
+}
+const style2=document.createElement('style');
+style2.textContent='.stop.unfinished-hidden{display:none!important}';
+document.head.appendChild(style2);
+
+document.getElementById('showUnfinished')?.addEventListener('click',()=>{
+  unfinishedOnly=!unfinishedOnly;
+  const b=document.getElementById('showUnfinished');
+  b.textContent=unfinishedOnly?'显示全部':'只看未完成';
+  applyUnfinished();
+});
+
+document.getElementById('goNext')?.addEventListener('click',()=>{
+  const candidates=[...document.querySelectorAll('.stop')].filter(s=>{
+    if(s.classList.contains('hidden')||s.classList.contains('unfinished-hidden')) return false;
+    const c=s.querySelector('.taskcheck');
+    return !c || !c.checked;
+  });
+  if(!candidates.length){ alert('当前筛选范围内已全部完成。'); return; }
+  const y=window.scrollY+100;
+  let target=candidates.find(s=>s.getBoundingClientRect().top+y>y+40) || candidates[0];
+  document.querySelectorAll('.stop.flash').forEach(x=>x.classList.remove('flash'));
+  target.classList.add('flash');
+  target.scrollIntoView({behavior:'smooth',block:'start'});
+  setTimeout(()=>target.classList.remove('flash'),1800);
+});
+
+document.getElementById('quickExport')?.addEventListener('click',()=>{
+  document.getElementById('exportBackup')?.click();
+});
+
+// Extra local safety snapshot ring; no old/Day1 keys are touched.
+function safetySnapshot(){
+  try{
+    const key='IFA2026_DAY2_FULL_V1:SAFETY_SNAPSHOTS';
+    const data=[...document.querySelectorAll('.stop')].map(s=>{
+      const c=s.querySelector('.taskcheck'), n=s.querySelector('.notes');
+      return {id:c?.dataset.id||'',done:!!c?.checked,note:n?.value||''};
+    });
+    let arr=JSON.parse(localStorage.getItem(key)||'[]');
+    arr.push({at:new Date().toISOString(),data});
+    if(arr.length>12) arr=arr.slice(-12);
+    localStorage.setItem(key,JSON.stringify(arr));
+  }catch(e){}
+}
+let snapTimer;
+document.querySelectorAll('.taskcheck,.notes').forEach(el=>el.addEventListener('input',()=>{
+  clearTimeout(snapTimer); snapTimer=setTimeout(safetySnapshot,1200);
+}));
+document.querySelectorAll('.taskcheck').forEach(el=>el.addEventListener('change',()=>{
+  clearTimeout(snapTimer); snapTimer=setTimeout(safetySnapshot,500);
+}));
+window.addEventListener('pagehide',safetySnapshot);
+markSaved();
+
+</script></body></html>
