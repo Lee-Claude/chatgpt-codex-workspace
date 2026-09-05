@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>IFA 2026 第二天 · 现场执行版</title><style>
+:root{--bg:#f4f6f8;--card:#fff;--ink:#17202a;--muted:#667085;--line:#e5e7eb;--a:#b42318;--b:#b54708;--c:#475467;--accent:#0b63ce;--ok:#067647}
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+a{color:var(--accent);text-decoration:none}.app{max-width:980px;margin:auto;padding:14px}.hero{background:#111827;color:#fff;border-radius:18px;padding:20px;margin-bottom:12px}.hero h1{font-size:25px;margin:0 0 8px}.hero p{margin:5px 0;color:#d1d5db;line-height:1.5}.hero .buttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.hero a,.topbtn{background:#fff;color:#111827;padding:9px 12px;border-radius:9px;font-weight:700;font-size:13px}.sticky{position:sticky;top:0;z-index:30;background:rgba(244,246,248,.96);backdrop-filter:blur(8px);padding:8px 0}.progressbox{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px}.bar{height:9px;background:#e5e7eb;border-radius:99px;flex:1;overflow:hidden}.bar>i{display:block;height:100%;width:0;background:var(--ok);transition:.2s}.pct{font-weight:800;min-width:55px;text-align:right}.filters{display:flex;gap:7px;overflow:auto;padding:8px 0}.filters button{white-space:nowrap;border:1px solid var(--line);background:white;border-radius:999px;padding:8px 11px;font-weight:700;color:#344054}.filters button.active{background:#111827;color:white}.search{width:100%;border:1px solid var(--line);background:#fff;border-radius:11px;padding:11px;font-size:16px}.day{margin:18px 0 28px}.dayhead{background:#eaf2ff;border:1px solid #cfe0ff;border-radius:14px;padding:14px}.dayhead h2{margin:0 0 5px;font-size:20px}.dayhead p{margin:4px 0;line-height:1.5}.block{margin:14px 0}.blocktitle{display:flex;gap:10px;align-items:baseline;margin:12px 3px 8px}.time{font-weight:900;color:#344054;min-width:105px}.hall{font-weight:900}.stop{background:var(--card);border:1px solid var(--line);border-left:5px solid #98a2b3;border-radius:14px;margin:8px 0;padding:12px;box-shadow:0 1px 2px rgba(16,24,40,.04)}.stop.priority-A{border-left-color:var(--a)}.stop.priority-B{border-left-color:var(--b)}.stop.done{opacity:.56;background:#f9fafb}.stop-top{display:flex;align-items:center;gap:9px}.seq{font-size:12px;font-weight:900;background:#f2f4f7;padding:5px 7px;border-radius:7px}.headings{flex:1;min-width:0}.brand{font-size:17px;font-weight:900}.meta{color:var(--muted);font-size:13px;margin-top:3px}.prio{font-weight:900;font-size:12px;border-radius:999px;padding:5px 8px;background:#f2f4f7}.priority-A .prio{color:var(--a);background:#fee4e2}.priority-B .prio{color:var(--b);background:#fef0c7}.goal,.why{margin:9px 0 0 38px;line-height:1.45;font-size:14px}.why{color:#475467}details{margin:10px 0 0 38px;border-top:1px dashed var(--line);padding-top:9px}summary{cursor:pointer;font-weight:800;color:#344054}.detailgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}.detailgrid>div,.script{background:#f9fafb;border-radius:10px;padding:10px}.detailgrid h4,.script h4{margin:0 0 6px}.detailgrid p,.detailgrid li,.script p{font-size:13px;line-height:1.55;margin-top:4px}.detailgrid ol{margin:0;padding-left:20px}.noteslabel{display:block;font-weight:800;margin-top:10px}.notes{display:block;width:100%;min-height:70px;margin-top:6px;border:1px solid var(--line);border-radius:9px;padding:9px;font-size:14px}.actions{margin-top:8px}.smallbtn{display:inline-block;background:#eef4ff;padding:7px 10px;border-radius:8px;font-size:12px;font-weight:800}.checkwrap input{display:none}.checkwrap span{display:block;width:24px;height:24px;border:2px solid #98a2b3;border-radius:7px;background:#fff;position:relative}.checkwrap input:checked+span{background:var(--ok);border-color:var(--ok)}.checkwrap input:checked+span:after{content:'✓';position:absolute;color:#fff;font-weight:900;left:5px;top:0}.tip,.introbox{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}.tip h3,.introbox h3{margin:0 0 8px}.legend{display:flex;gap:8px;flex-wrap:wrap}.legend span{font-size:12px;padding:5px 8px;border-radius:8px;background:#f2f4f7}.optional{background:#fffaeb;border-color:#fedf89}.hidden{display:none!important}.footer{font-size:12px;color:#667085;padding:20px 5px 40px;line-height:1.5}
+@media(max-width:700px){.app{padding:9px}.hero{border-radius:14px;padding:16px}.hero h1{font-size:21px}.detailgrid{grid-template-columns:1fr}.goal,.why,details{margin-left:33px}.time{min-width:0}.blocktitle{display:block}.blocktitle .time{margin-bottom:3px}.brand{font-size:16px}.meta{font-size:12px}}
+@media print{.sticky,.filters,.search,.hero .buttons,.notes,.actions{display:none!important}.app{max-width:none}.stop{break-inside:avoid;box-shadow:none}.hero{color:#000;background:#fff;border:1px solid #ddd}.hero p{color:#444}details{display:block}details>*{display:block}summary{display:none}.day{page-break-before:always}.day:first-of-type{page-break-before:auto}}
+
+/* 第二天独立版增强：仍沿用第一天视觉体系 */
+.hero .safe-note{margin-top:10px;padding:9px 11px;border-radius:10px;background:#1f2937;color:#d1fae5;font-size:13px}
+.filters button[data-filter="scooter"]{border-color:#cfe0ff}
+.repairbox{background:#f7fbff;border:1px solid #dbeafe;border-radius:10px;padding:10px;margin-top:10px}
+.repairbox h4{margin:0 0 6px;color:#1849a9}
+.repairbox p,.repairbox li{font-size:13px;line-height:1.55}
+.repairbox ul{margin:5px 0 0;padding-left:20px}
+.savecollapse{margin-left:7px;border:0;background:#eef4ff;color:#1849a9;padding:7px 10px;border-radius:8px;font-weight:800;font-size:12px;cursor:pointer}
+.backupbar{position:sticky;bottom:0;z-index:25;background:rgba(244,246,248,.97);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:8px 0;display:flex;gap:8px}
+.backupbar button{flex:1;border:1px solid var(--line);border-radius:10px;padding:10px;background:#fff;font-weight:800;color:#344054}
+.backupbar .export{background:#ecfdf3;border-color:#abefc6;color:#067647}
+.scooter-note{background:#f0f9ff;border:1px solid #b9e6fe;border-radius:12px;padding:11px;margin:9px 0;color:#344054;line-height:1.5;font-size:13px}
+@media(max-width:700px){.savecollapse{display:block;margin:8px 0 0 0;width:100%}.backupbar{padding-bottom:calc(8px + env(safe-area-inset-bottom))}}
+
+/* ===== 手机现场使用增强：保持第一天原版视觉结构 ===== */
+html{scroll-behavior:smooth}
+body{padding-bottom:calc(74px + env(safe-area-inset-bottom))}
+.app{max-width:760px;margin:0 auto}
+.mobile-actionbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));
+  background:rgba(248,250,252,.97);backdrop-filter:blur(12px);
+  border-top:1px solid #dfe4ea
+}
+.mobile-actionbar button{
+  min-height:44px;border:1px solid #d0d5dd;border-radius:11px;
+  background:#fff;color:#344054;font-weight:800;font-size:13px
+}
+.mobile-actionbar button.primary{background:#155eef;color:#fff;border-color:#155eef}
+.mobile-actionbar button.safe{background:#ecfdf3;color:#067647;border-color:#abefc6}
+.quick-status{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:8px;margin-top:8px;padding:8px 10px;border-radius:10px;
+  background:#f8fafc;border:1px solid #e4e7ec;font-size:12px;color:#667085
+}
+.quick-status b{color:#344054}
+.stop.flash{outline:3px solid #84adff;outline-offset:2px}
+@media(max-width:700px){
+  .hero{padding-top:16px}
+  .hero h1{font-size:22px}
+  .sticky{top:0}
+  .filters{overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+  .filters button{flex:0 0 auto;min-height:42px}
+  .search{font-size:16px!important;min-height:46px}
+  .stop{border-radius:14px}
+  .top,.head{align-items:flex-start}
+  details summary{font-size:15px;line-height:1.35}
+  .notes{font-size:16px!important;min-height:120px!important}
+  .savecollapse{min-height:44px}
+}
+
+</style></head><body><main class="app"><section class="hero">
+<h1>IFA 2026 · 第二天现场执行版</h1>
+<p>核心原则：<b>完全沿用第一天的卡片、进度、筛选、展商详情、现场记录和折叠逻辑</b>。本文件只记录第二天，不碰第一天旧数据。</p>
+<p>公司定位：<b>Homburg International DC GmbH · 德国本地维修 / RMA / 技术售后服务</b></p>
+<div class="safe-note">数据隔离：第二天使用独立命名空间 IFA2026_DAY2_FULL_V1。后天恢复第一天后，可导出两份 JSON 再合并。</div>
+</section>
+<div class="sticky">
+<div class="progressbox"><b>完成进度</b><div class="bar"><i id="bar"></i></div><div class="pct" id="pct">0%</div></div>
+<div class="filters">
+<button class="active" data-filter="all">全部</button>
+<button data-filter="A">只看 A级</button>
+<button data-filter="core">核心路线</button>
+<button data-filter="scooter">电动滑板车</button>
+</div>
+<input class="search" id="search" placeholder="搜索品牌 / 展位 / 主题，例如 H12-119、Hypershell、Pongbot、NAVEE、RMA"/>
+</div>
+
+<section class="tip"><h3>A / B / C 分级原则（沿用第一天）</h3>
+<div class="legend"><span>🔴 A级：必须谈 · 15–25分钟</span><span>🟠 B级：重点判断 · 8–12分钟</span><span>⚪ C级：顺路快扫 · 3–5分钟</span></div>
+<p><b>A级：</b>优先拿到德国/欧洲售后负责人、维修/RMA流程、备件与维修培训条件，并约定展会后的下一步。</p>
+<p><b>B级：</b>8–12分钟快速判断：德国是否已有维修伙伴、是否存在区域/峰值服务缺口、是否开放第三方授权维修。</p>
+<p><b>C级：</b>只在同馆顺路时快速确认售后现状、拿联系人和资料；时间不足首先删 C 级。</p>
+</section>
+
+<section class="introbox" id="intro"><h3>30 秒自我介绍 · 直接照着说</h3>
+<p><b>中文：</b>你好，我是 Lee，来自德国法兰克福地区的 Homburg International DC GmbH。我们专门为高价值电子产品提供德国本地维修和 RMA 售后服务，包括故障诊断、维修、备件管理、保修案件处理和技术支持。我们特别想了解你们目前在德国的售后是如何组织的，以及是否需要德国本地维修和服务合作伙伴。</p>
+<p><b>德语：</b>Guten Tag, ich bin Lee von Homburg International DC GmbH aus dem Raum Frankfurt. Wir sind auf die Reparatur hochwertiger elektronischer Produkte in Deutschland spezialisiert, einschließlich Fehlerdiagnose, RMA-Abwicklung, Ersatzteilmanagement, Garantieabwicklung und technischem After-Sales-Service. Mich interessiert besonders, wie Ihr Service in Deutschland heute organisiert ist und ob Sie einen lokalen Reparatur- und Servicepartner benötigen.</p>
+<p><b>英语：</b>Hi, I’m Lee from Homburg International DC GmbH, based in the Frankfurt area. We specialize in Germany-based repair of high-value electronic products, fault diagnosis, RMA handling, spare-parts management and technical after-sales service. I’m particularly interested in how your German service operation works today and whether you need a local repair and service partner.</p>
+<p><b>核心筛选问题：</b>How do you currently handle defective units in Germany?</p>
+</section>
+<section class="day" data-daysec="d2"><div class="dayhead"><h2>9月5日 周六 · 外骨骼 + 网球机器人 + IFA Next + 电动滑板车备用</h2><p><b>入口：</b>建议从 Hall 12 / Hall 15 一侧开始</p><p><b>核心动线：</b>Hall 12 → Hall 15 → Hall 1.2 → Hall 2.2 → Hall 25 → Hall 26</p><p><b>执行原则：</b>A 级深谈；B 级快速判断；C 级顺路补漏。电动滑板车作为独立加程，优先 CityCube Hall B。</p></div></section>
+<div class="mobile-actionbar">
+  <button id="showUnfinished">只看未完成</button>
+  <button class="primary" id="goNext">下一站</button>
+  <button class="safe" id="quickExport">立即备份</button>
+</div>
+</main><script>const NS='IFA2026_DAY2_FULL_V1';</script></body></html>
