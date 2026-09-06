@@ -15,7 +15,7 @@ When leaving a handoff, include:
 
 ## Current handoff
 
-**Current task:** Connect the completed shared workspace to the user's local Codex / Claude Code environment.
+**Current task:** Local Codex / Claude Code workspace connection completed.
 
 **Completed:**
 - Repository created and connected.
@@ -28,13 +28,13 @@ When leaving a handoff, include:
 - `.gitignore`, `SECURITY.md`, and a pull-request template added for safety and review discipline.
 - Root `README.md` expanded into the human navigation page.
 - Public-repository privacy guard is active throughout the workspace documentation.
+- Repository cloned locally on `main`.
+- Codex passed a read-only check: it identified `AGENTS.md`, `CODEX.md`, the required shared context files, and the public-repository privacy guard.
+- Claude Code passed the equivalent read-only check using `AGENTS.md` and `CLAUDE.md`.
 
 **Remaining:**
-- Clone or open `Lee-Claude/chatgpt-codex-workspace` in the user's local machine environment.
-- Verify Codex reads root `AGENTS.md` and follows `CODEX.md` as directed.
-- Verify Claude Code reads `CLAUDE.md` and the shared repository rules.
 - Begin placing real, sanitized projects under `projects/`.
 
 **Known risk:** This repository is public. Do not commit customer-identifiable information, credentials, confidential contracts/offers, private correspondence, banking information, or other sensitive material.
 
-**Recommended next action:** On the user's computer, clone/open the repository and perform a small read-only verification in Codex and Claude Code before starting real project work.
+**Recommended next action:** Start real work only in a sanitized directory under `projects/`, and pull with `git pull --ff-only` before working from another machine.
